@@ -48,6 +48,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<AppDataContext>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITransferRepository, TransferRepository>();
 
 #endregion
 
