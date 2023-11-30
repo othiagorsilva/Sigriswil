@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region Add services to the container.
 
-builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+builder.Services.AddControllers().AddNewtonsoftJson(x =>
+    x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 builder.Services.AddCors();
 

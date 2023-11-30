@@ -38,4 +38,31 @@ public class UserController : ControllerBase
             return BadRequest(e.Message);
         }
     }
+    
+    /// <summary>
+    /// Listar Usuarios
+    /// </summary>
+    /// <remarks>
+    /// Listar Usuarios
+    /// </remarks>
+    [HttpGet]
+    [Route("")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetAll([FromServices] IUserRepository repository)
+    {
+        try
+        {
+            var users = await repository.GetAllAsync();
+            if (users != null && users.Any())
+                return StatusCode(StatusCodes.Status200OK, users);
+
+            return NotFound("Data not found");
+        }
+        catch (System.Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
