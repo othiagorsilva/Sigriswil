@@ -1,11 +1,8 @@
-using System.Configuration;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using SigriswilPay;
 using SigriswilPay.Data;
-using ConfigurationManager = System.Configuration.ConfigurationManager;
-using ConfigurationSection = Microsoft.Extensions.Configuration.ConfigurationSection;
+using SigriswilPay.Data.Repositories;
+using SigriswilPay.Interfaces.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,10 +44,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddDbContext<AppDataContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetSection("ConnectionString").ToString());
-});
+builder.Services.AddDbContext<AppDataContext>();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 #endregion
 

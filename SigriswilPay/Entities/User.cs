@@ -1,3 +1,5 @@
+using SigriswilPay.DTO;
+
 namespace SigriswilPay.Entities;
 
 public class User
@@ -9,14 +11,16 @@ public class User
     public string Email { get; private set; }
     public decimal Balance { get; private set; }
 
-    public User(UserType type, string name, string identificationNumber, string email, decimal balance)
+    protected User() {}
+    
+    public User(CreateUser createUserDTO)
     {
         Id = Guid.NewGuid().ToString("N");
-        Type = type;
-        Name = name ?? throw new ArgumentNullException(nameof(name));
-        IdentificationNumber = identificationNumber ?? throw new ArgumentNullException(nameof(identificationNumber));
-        Email = email ?? throw new ArgumentNullException(nameof(email));
-        Balance = balance >= 0 ? balance : throw new Exception("Cannot create a user with a balance less than zero");
+        Type = createUserDTO.Type;
+        Name = createUserDTO.Name ?? throw new ArgumentNullException(nameof(createUserDTO.Name));
+        IdentificationNumber = createUserDTO.IdentificationNumber ?? throw new ArgumentNullException(nameof(createUserDTO.IdentificationNumber));
+        Email = createUserDTO.Email ?? throw new ArgumentNullException(nameof(createUserDTO.Email));
+        Balance = createUserDTO.Balance >= 0 ? createUserDTO.Balance : throw new Exception("Cannot create a user with a balance less than zero");
     }
 
     public void Debit(decimal debitAmount)

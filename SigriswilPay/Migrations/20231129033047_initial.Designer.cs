@@ -11,7 +11,7 @@ using SigriswilPay.Data;
 namespace SigriswilPay.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20231128205124_initial")]
+    [Migration("20231129033047_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,7 +30,7 @@ namespace SigriswilPay.Migrations
                         .HasColumnName("Id");
 
                     b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(18.2)")
+                        .HasColumnType("decimal(18,2)")
                         .HasColumnName("Balance");
 
                     b.Property<string>("Email")

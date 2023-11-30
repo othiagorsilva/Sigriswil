@@ -38,7 +38,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.Balance)
             .HasColumnName("Balance")
-            .HasColumnType("decimal(18.2)");
+            .HasColumnType("decimal(18,2)");
 
         builder.HasIndex(u => u.IdentificationNumber).IsUnique();
         builder.HasIndex(u => u.Email).IsUnique();

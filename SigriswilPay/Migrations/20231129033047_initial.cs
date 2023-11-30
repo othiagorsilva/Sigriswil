@@ -17,7 +17,7 @@ namespace SigriswilPay.Migrations
                     Name = table.Column<string>(type: "varchar(100)", nullable: false),
                     IdentificationNumber = table.Column<string>(type: "varchar(15)", nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", nullable: false),
-                    Balance = table.Column<decimal>(type: "decimal(18.2)", nullable: false)
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
