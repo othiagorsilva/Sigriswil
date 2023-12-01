@@ -1,9 +1,9 @@
 # Sigriswil
 
 ## Sobre Sigriswil
-O objetivo deste projeto é resolver um [desafio técnico](https://github.com/PicPay/picpay-desafio-backend) de uma fintech brasileira, aplicando meus conhecimentos. Portanto não se trata de uma candidatura ao processo seletivo, mas sim um projeto para colocar em pratica meus conhecimentos em DotNet, C#, etc.
+O objetivo deste projeto é resolver um [desafio técnico](https://github.com/PicPay/picpay-desafio-backend) de uma fintech brasileira, aplicando meus conhecimentos. Portanto não se trata de uma candidatura ao processo seletivo, mas sim um projeto para colocar em pratica meus conhecimentos em DotNet, C#, SOLID, etc.
 
-O nome do projeto vem de Sigriswil, um comuna Suiça.
+O nome do projeto vem de Sigriswil, uma comuna Suiça.
 
 ## O Desafio
 Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinheiro e realizam transferências entre eles. Vamos nos atentar **somente** ao fluxo de transferência entre dois usuários.
